@@ -245,7 +245,7 @@
         <div class="preview-wrap">
           <div class="stage">
             <canvas id="stageCanvas" width="320" height="320"></canvas>
-            <video id="webcamVideo" autoplay playsinline muted style="display:none;"></video>
+            <video id="webcamVideo" autoplay playsinline muted style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;"></video>
           </div>
           <div class="crop-preview-box">
             <canvas id="cropCanvas" width="96" height="96"></canvas>
@@ -328,14 +328,15 @@
 
     let session = null;
     let meta = null;
-    let faceDetectorImage = null;
-    let faceDetectorVideo = null;
+    let faceDetector = null;
     let currentImg = null;
     let webcamStream = null;
     let webcamTimer = null;
     let busy = false;
     let emaState = null;
     let smoothBox = null; // smoothed auto-detected face box for webcam
+    const frameCanvas = document.createElement("canvas");
+    const frameCtx = frameCanvas.getContext("2d");
 
     const dropzone = document.getElementById("dropzone");
     const fileInput = document.getElementById("fileInput");
@@ -431,13 +432,17 @@
     }
 
     function detectFaceSquareBox(source, sw, sh, isWebcam) {
-      if (!autoDetectToggle.checked) return null;
-      const det = isWebcam ? faceDetectorVideo : faceDetectorImage;
-      if (!det) return null;
+      if (!autoDetectToggle.checked || !faceDetector) return null;
       try {
-        const res = isWebcam ? det.detectForVideo(source, performance.now()) : det.detect(source);
+        // Draw frame to an offscreen canvas so MediaPipe IMAGE mode works identically
+        // for both <video> and <img> across all browsers (no display:none or timestamp bugs).
+        frameCanvas.width = sw;
+        frameCanvas.height = sh;
+        frameCtx.drawImage(source, 0, 0, sw, sh);
+
+        const res = faceDetector.detect(frameCanvas);
         if (!res.detections || res.detections.length === 0) return null;
-        // Pick largest / highest-confidence face
+        // Pick largest detected face
         const best = res.detections.reduce((a, b) =>
           (b.boundingBox.width * b.boundingBox.height > a.boundingBox.width * a.boundingBox.height ? b : a)
         );
@@ -462,6 +467,7 @@
         }
         return box;
       } catch (e) {
+        noteText.textContent = "Face detector error: " + e.message;
         console.warn("Face detect error:", e);
         return null;
       }
@@ -639,23 +645,19 @@
           "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.18/wasm"
         );
         const detectorModel = "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite";
-        faceDetectorImage = await FaceDetector.createFromOptions(vision, {
-          baseOptions: { modelAssetPath: detectorModel },
+        faceDetector = await FaceDetector.createFromOptions(vision, {
+          baseOptions: { modelAssetPath: detectorModel, delegate: "CPU" },
           runningMode: "IMAGE",
-          minDetectionConfidence: 0.4,
-        });
-        faceDetectorVideo = await FaceDetector.createFromOptions(vision, {
-          baseOptions: { modelAssetPath: detectorModel },
-          runningMode: "VIDEO",
-          minDetectionConfidence: 0.4,
+          minDetectionConfidence: 0.35,
         });
 
         modelStatus.textContent = "Ready (CNN + Auto Face Detect)";
         modelStatus.style.color = "#34d399";
       } catch (err) {
         if (session) {
-          modelStatus.textContent = "Ready (CNN only; manual crop)";
-          modelStatus.style.color = "#34d399";
+          modelStatus.textContent = "Ready (CNN only — detector error)";
+          modelStatus.style.color = "#fbbf24";
+          noteText.textContent = "Detector init failed: " + err.message;
           console.warn("Face detector unavailable, falling back to manual crop:", err);
         } else {
           modelStatus.textContent = "Load failed: " + err.message;
