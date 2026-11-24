@@ -1,0 +1,28 @@
+{
+  "img_size": 96,
+  "origin_names": [
+    "White",
+    "Black",
+    "Asian",
+    "Indian",
+    "Others"
+  ],
+  "gender_names": [
+    "Male",
+    "Female"
+  ],
+  "age_names": [
+    "0-2",
+    "3-9",
+    "10-19",
+    "20-29",
+    "30-39",
+    "40-49",
+    "50-59",
+    "60-69",
+    "more than 70"
+  ],
+  "age_mode": "classification",
+  "params": 393008,
+  "source_checkpoint": "runs/champion_cnn_100ep/best_model.pt"
+}

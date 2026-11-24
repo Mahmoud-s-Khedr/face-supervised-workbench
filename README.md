@@ -1,5 +1,7 @@
 # Face Attribute Supervised Learning Workbench (PyTorch)
 
+**Live In-Browser Demo (100% client-side, 1.51 MB ONNX):** **https://mahmoud-s-khedr.github.io/face-supervised-workbench/**
+
 A modular PyTorch experimentation workbench for multi-task **Origin, Gender, and Age** prediction trained on **121,403 real faces** (merged **FairFace** + **UTKFace**).
 
 Built to study deep learning from first principles by isolating **every layer of a supervised pipeline** into swappable modules and running controlled A/B comparisons across **35+ GPU experiments**.
