@@ -1,0 +1,6 @@
+torch
+torchvision
+datasets
+pillow
+matplotlib
+numpy

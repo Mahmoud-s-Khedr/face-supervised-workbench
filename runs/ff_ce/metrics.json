@@ -1,0 +1,168 @@
+{
+  "run_name": "ff_ce",
+  "device": "cuda",
+  "params": 393522,
+  "elapsed_sec": 111.22,
+  "config": {
+    "run_name": "ff_ce",
+    "dataset": "fairface",
+    "data_dir": "",
+    "fairface_config": "0.25",
+    "age_mode": null,
+    "img_size": 96,
+    "augment": "none",
+    "max_samples": 12000,
+    "model": "cnn",
+    "activation": "relu",
+    "norm": "batchnorm",
+    "init": "default",
+    "dropout": 0.2,
+    "no_pretrained": false,
+    "cls_loss": "cross_entropy",
+    "reg_loss": "huber",
+    "optimizer": "adamw",
+    "scheduler": "cosine",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "epochs": 6,
+    "seed": 42,
+    "num_workers": 2,
+    "no_save_checkpoint": false
+  },
+  "final": {
+    "epoch": 6,
+    "lr": 1e-06,
+    "train_loss": 3.6531,
+    "grad_norm": 4.5821,
+    "val_loss": 3.6608,
+    "origin_acc": 0.424,
+    "gender_acc": 0.7303,
+    "per_origin_acc": {
+      "East Asian": 0.4617,
+      "Indian": 0.4714,
+      "Black": 0.715,
+      "White": 0.652,
+      "Middle Eastern": 0.0885,
+      "Latino_Hispanic": 0.2304,
+      "Southeast Asian": 0.2124
+    },
+    "age_acc": 0.3677
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.000933,
+      "train_loss": 4.4404,
+      "grad_norm": 2.0549,
+      "val_loss": 4.3334,
+      "origin_acc": 0.2513,
+      "gender_acc": 0.636,
+      "per_origin_acc": {
+        "East Asian": 0.4292,
+        "Indian": 0.4783,
+        "Black": 0.2464,
+        "White": 0.2436,
+        "Middle Eastern": 0.0,
+        "Latino_Hispanic": 0.226,
+        "Southeast Asian": 0.0622
+      },
+      "age_acc": 0.313
+    },
+    {
+      "epoch": 2,
+      "lr": 0.00075,
+      "train_loss": 4.2467,
+      "grad_norm": 2.2523,
+      "val_loss": 4.2711,
+      "origin_acc": 0.284,
+      "gender_acc": 0.5927,
+      "per_origin_acc": {
+        "East Asian": 0.4524,
+        "Indian": 0.2586,
+        "Black": 0.2053,
+        "White": 0.7766,
+        "Middle Eastern": 0.0,
+        "Latino_Hispanic": 0.0291,
+        "Southeast Asian": 0.057
+      },
+      "age_acc": 0.3317
+    },
+    {
+      "epoch": 3,
+      "lr": 0.000501,
+      "train_loss": 4.0599,
+      "grad_norm": 3.024,
+      "val_loss": 4.1024,
+      "origin_acc": 0.3043,
+      "gender_acc": 0.6907,
+      "per_origin_acc": {
+        "East Asian": 0.4872,
+        "Indian": 0.3661,
+        "Black": 0.1111,
+        "White": 0.7527,
+        "Middle Eastern": 0.0708,
+        "Latino_Hispanic": 0.047,
+        "Southeast Asian": 0.1062
+      },
+      "age_acc": 0.3017
+    },
+    {
+      "epoch": 4,
+      "lr": 0.000251,
+      "train_loss": 3.8984,
+      "grad_norm": 3.9642,
+      "val_loss": 3.9393,
+      "origin_acc": 0.3537,
+      "gender_acc": 0.6927,
+      "per_origin_acc": {
+        "East Asian": 0.71,
+        "Indian": 0.1007,
+        "Black": 0.6449,
+        "White": 0.5147,
+        "Middle Eastern": 0.1327,
+        "Latino_Hispanic": 0.2461,
+        "Southeast Asian": 0.0207
+      },
+      "age_acc": 0.3393
+    },
+    {
+      "epoch": 5,
+      "lr": 6.8e-05,
+      "train_loss": 3.755,
+      "grad_norm": 4.5134,
+      "val_loss": 3.7345,
+      "origin_acc": 0.3967,
+      "gender_acc": 0.7433,
+      "per_origin_acc": {
+        "East Asian": 0.5916,
+        "Indian": 0.3867,
+        "Black": 0.6256,
+        "White": 0.5604,
+        "Middle Eastern": 0.0796,
+        "Latino_Hispanic": 0.123,
+        "Southeast Asian": 0.3083
+      },
+      "age_acc": 0.3727
+    },
+    {
+      "epoch": 6,
+      "lr": 1e-06,
+      "train_loss": 3.6531,
+      "grad_norm": 4.5821,
+      "val_loss": 3.6608,
+      "origin_acc": 0.424,
+      "gender_acc": 0.7303,
+      "per_origin_acc": {
+        "East Asian": 0.4617,
+        "Indian": 0.4714,
+        "Black": 0.715,
+        "White": 0.652,
+        "Middle Eastern": 0.0885,
+        "Latino_Hispanic": 0.2304,
+        "Southeast Asian": 0.2124
+      },
+      "age_acc": 0.3677
+    }
+  ]
+}

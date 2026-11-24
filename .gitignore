@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+.DS_Store
+
+# Ignore synthetic smoke-test runs
+runs/demo_*/
+
+# Keep metrics.json and charts, ignore heavy checkpoints EXCEPT the 1.6 MB Champion CNN
+runs/**/*.pt
+!runs/champion_cnn_100ep/best_model.pt

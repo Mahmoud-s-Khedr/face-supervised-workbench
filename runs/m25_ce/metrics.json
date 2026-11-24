@@ -1,0 +1,480 @@
+{
+  "run_name": "m25_ce",
+  "device": "cuda",
+  "params": 393008,
+  "elapsed_sec": 955.13,
+  "best_epoch": 25,
+  "best_val_loss": 2.0736,
+  "config": {
+    "run_name": "m25_ce",
+    "dataset": "merged",
+    "data_dir": "",
+    "fairface_config": "0.25",
+    "age_mode": "classification",
+    "img_size": 96,
+    "augment": "none",
+    "max_samples": null,
+    "model": "cnn",
+    "activation": "relu",
+    "norm": "batchnorm",
+    "init": "default",
+    "dropout": 0.2,
+    "no_pretrained": false,
+    "cls_loss": "cross_entropy",
+    "reg_loss": "huber",
+    "optimizer": "adamw",
+    "scheduler": "cosine",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 256,
+    "epochs": 25,
+    "seed": 42,
+    "num_workers": 8,
+    "cache_dir": "/content/cache",
+    "no_save_checkpoint": false
+  },
+  "final": {
+    "epoch": 25,
+    "lr": 1e-06,
+    "train_loss": 1.8945,
+    "grad_norm": 6.0131,
+    "val_loss": 2.0736,
+    "origin_acc": 0.7315,
+    "gender_acc": 0.8889,
+    "per_origin_acc": {
+      "White": 0.7544,
+      "Black": 0.8129,
+      "Asian": 0.8425,
+      "Indian": 0.632,
+      "Others": 0.5835
+    },
+    "age_acc": 0.5353
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.000996,
+      "train_loss": 3.55,
+      "grad_norm": 5.6164,
+      "val_loss": 3.387,
+      "origin_acc": 0.4668,
+      "gender_acc": 0.749,
+      "per_origin_acc": {
+        "White": 0.1812,
+        "Black": 0.7522,
+        "Asian": 0.8896,
+        "Indian": 0.4539,
+        "Others": 0.141
+      },
+      "age_acc": 0.3912
+    },
+    {
+      "epoch": 2,
+      "lr": 0.000984,
+      "train_loss": 3.0031,
+      "grad_norm": 7.6485,
+      "val_loss": 3.0978,
+      "origin_acc": 0.5957,
+      "gender_acc": 0.8158,
+      "per_origin_acc": {
+        "White": 0.6888,
+        "Black": 0.8792,
+        "Asian": 0.6778,
+        "Indian": 0.2825,
+        "Others": 0.3873
+      },
+      "age_acc": 0.3362
+    },
+    {
+      "epoch": 3,
+      "lr": 0.000965,
+      "train_loss": 2.7884,
+      "grad_norm": 7.3857,
+      "val_loss": 2.734,
+      "origin_acc": 0.5946,
+      "gender_acc": 0.8289,
+      "per_origin_acc": {
+        "White": 0.6885,
+        "Black": 0.5822,
+        "Asian": 0.4216,
+        "Indian": 0.6303,
+        "Others": 0.6553
+      },
+      "age_acc": 0.4526
+    },
+    {
+      "epoch": 4,
+      "lr": 0.000938,
+      "train_loss": 2.6319,
+      "grad_norm": 7.2773,
+      "val_loss": 2.8701,
+      "origin_acc": 0.5983,
+      "gender_acc": 0.7623,
+      "per_origin_acc": {
+        "White": 0.8975,
+        "Black": 0.7388,
+        "Asian": 0.7726,
+        "Indian": 0.1496,
+        "Others": 0.2253
+      },
+      "age_acc": 0.4673
+    },
+    {
+      "epoch": 5,
+      "lr": 0.000905,
+      "train_loss": 2.5324,
+      "grad_norm": 7.3477,
+      "val_loss": 3.0044,
+      "origin_acc": 0.6104,
+      "gender_acc": 0.812,
+      "per_origin_acc": {
+        "White": 0.7993,
+        "Black": 0.9357,
+        "Asian": 0.7512,
+        "Indian": 0.125,
+        "Others": 0.3018
+      },
+      "age_acc": 0.3699
+    },
+    {
+      "epoch": 6,
+      "lr": 0.000865,
+      "train_loss": 2.4593,
+      "grad_norm": 7.4829,
+      "val_loss": 2.651,
+      "origin_acc": 0.6468,
+      "gender_acc": 0.8272,
+      "per_origin_acc": {
+        "White": 0.5901,
+        "Black": 0.7437,
+        "Asian": 0.5718,
+        "Indian": 0.6509,
+        "Others": 0.728
+      },
+      "age_acc": 0.4435
+    },
+    {
+      "epoch": 7,
+      "lr": 0.000819,
+      "train_loss": 2.3896,
+      "grad_norm": 7.2157,
+      "val_loss": 3.2919,
+      "origin_acc": 0.628,
+      "gender_acc": 0.8025,
+      "per_origin_acc": {
+        "White": 0.5617,
+        "Black": 0.8902,
+        "Asian": 0.769,
+        "Indian": 0.7355,
+        "Others": 0.2736
+      },
+      "age_acc": 0.3388
+    },
+    {
+      "epoch": 8,
+      "lr": 0.000768,
+      "train_loss": 2.337,
+      "grad_norm": 7.2184,
+      "val_loss": 2.7524,
+      "origin_acc": 0.5613,
+      "gender_acc": 0.8512,
+      "per_origin_acc": {
+        "White": 0.9657,
+        "Black": 0.62,
+        "Asian": 0.4507,
+        "Indian": 0.4667,
+        "Others": 0.1887
+      },
+      "age_acc": 0.454
+    },
+    {
+      "epoch": 9,
+      "lr": 0.000713,
+      "train_loss": 2.2848,
+      "grad_norm": 6.8403,
+      "val_loss": 2.4525,
+      "origin_acc": 0.648,
+      "gender_acc": 0.8677,
+      "per_origin_acc": {
+        "White": 0.9069,
+        "Black": 0.7307,
+        "Asian": 0.7449,
+        "Indian": 0.3232,
+        "Others": 0.3714
+      },
+      "age_acc": 0.4765
+    },
+    {
+      "epoch": 10,
+      "lr": 0.000655,
+      "train_loss": 2.2463,
+      "grad_norm": 6.9083,
+      "val_loss": 2.2829,
+      "origin_acc": 0.6903,
+      "gender_acc": 0.8739,
+      "per_origin_acc": {
+        "White": 0.6832,
+        "Black": 0.6635,
+        "Asian": 0.9019,
+        "Indian": 0.4961,
+        "Others": 0.6167
+      },
+      "age_acc": 0.5112
+    },
+    {
+      "epoch": 11,
+      "lr": 0.000594,
+      "train_loss": 2.2037,
+      "grad_norm": 6.9867,
+      "val_loss": 2.546,
+      "origin_acc": 0.6205,
+      "gender_acc": 0.8673,
+      "per_origin_acc": {
+        "White": 0.9237,
+        "Black": 0.5989,
+        "Asian": 0.5973,
+        "Indian": 0.4425,
+        "Others": 0.3999
+      },
+      "age_acc": 0.4722
+    },
+    {
+      "epoch": 12,
+      "lr": 0.000532,
+      "train_loss": 2.167,
+      "grad_norm": 7.0056,
+      "val_loss": 2.3273,
+      "origin_acc": 0.6687,
+      "gender_acc": 0.8798,
+      "per_origin_acc": {
+        "White": 0.6596,
+        "Black": 0.9406,
+        "Asian": 0.7518,
+        "Indian": 0.5763,
+        "Others": 0.4422
+      },
+      "age_acc": 0.5098
+    },
+    {
+      "epoch": 13,
+      "lr": 0.000469,
+      "train_loss": 2.1307,
+      "grad_norm": 6.6735,
+      "val_loss": 2.5711,
+      "origin_acc": 0.6976,
+      "gender_acc": 0.7525,
+      "per_origin_acc": {
+        "White": 0.8435,
+        "Black": 0.7396,
+        "Asian": 0.8036,
+        "Indian": 0.4811,
+        "Others": 0.5105
+      },
+      "age_acc": 0.4782
+    },
+    {
+      "epoch": 14,
+      "lr": 0.000407,
+      "train_loss": 2.0992,
+      "grad_norm": 6.8666,
+      "val_loss": 2.2928,
+      "origin_acc": 0.6863,
+      "gender_acc": 0.8556,
+      "per_origin_acc": {
+        "White": 0.8642,
+        "Black": 0.6729,
+        "Asian": 0.7723,
+        "Indian": 0.5241,
+        "Others": 0.4848
+      },
+      "age_acc": 0.5132
+    },
+    {
+      "epoch": 15,
+      "lr": 0.000346,
+      "train_loss": 2.0703,
+      "grad_norm": 7.0631,
+      "val_loss": 2.1795,
+      "origin_acc": 0.7079,
+      "gender_acc": 0.886,
+      "per_origin_acc": {
+        "White": 0.7366,
+        "Black": 0.7929,
+        "Asian": 0.9175,
+        "Indian": 0.6219,
+        "Others": 0.4271
+      },
+      "age_acc": 0.5179
+    },
+    {
+      "epoch": 16,
+      "lr": 0.000288,
+      "train_loss": 2.0387,
+      "grad_norm": 6.7358,
+      "val_loss": 2.2799,
+      "origin_acc": 0.6997,
+      "gender_acc": 0.8817,
+      "per_origin_acc": {
+        "White": 0.8409,
+        "Black": 0.7408,
+        "Asian": 0.7145,
+        "Indian": 0.5329,
+        "Others": 0.5882
+      },
+      "age_acc": 0.4935
+    },
+    {
+      "epoch": 17,
+      "lr": 0.000233,
+      "train_loss": 2.0158,
+      "grad_norm": 6.7964,
+      "val_loss": 2.1115,
+      "origin_acc": 0.7212,
+      "gender_acc": 0.8856,
+      "per_origin_acc": {
+        "White": 0.7745,
+        "Black": 0.8291,
+        "Asian": 0.826,
+        "Indian": 0.5851,
+        "Others": 0.5469
+      },
+      "age_acc": 0.5271
+    },
+    {
+      "epoch": 18,
+      "lr": 0.000182,
+      "train_loss": 1.9892,
+      "grad_norm": 6.7234,
+      "val_loss": 2.1827,
+      "origin_acc": 0.706,
+      "gender_acc": 0.8744,
+      "per_origin_acc": {
+        "White": 0.8397,
+        "Black": 0.751,
+        "Asian": 0.8055,
+        "Indian": 0.4838,
+        "Others": 0.5437
+      },
+      "age_acc": 0.5196
+    },
+    {
+      "epoch": 19,
+      "lr": 0.000136,
+      "train_loss": 1.9632,
+      "grad_norm": 6.4655,
+      "val_loss": 2.1573,
+      "origin_acc": 0.7131,
+      "gender_acc": 0.8816,
+      "per_origin_acc": {
+        "White": 0.7726,
+        "Black": 0.7828,
+        "Asian": 0.9041,
+        "Indian": 0.5219,
+        "Others": 0.5008
+      },
+      "age_acc": 0.5293
+    },
+    {
+      "epoch": 20,
+      "lr": 9.6e-05,
+      "train_loss": 1.9466,
+      "grad_norm": 6.4671,
+      "val_loss": 2.1152,
+      "origin_acc": 0.7227,
+      "gender_acc": 0.8898,
+      "per_origin_acc": {
+        "White": 0.7597,
+        "Black": 0.8039,
+        "Asian": 0.7512,
+        "Indian": 0.6649,
+        "Others": 0.6211
+      },
+      "age_acc": 0.5269
+    },
+    {
+      "epoch": 21,
+      "lr": 6.3e-05,
+      "train_loss": 1.9309,
+      "grad_norm": 6.3875,
+      "val_loss": 2.101,
+      "origin_acc": 0.7284,
+      "gender_acc": 0.8884,
+      "per_origin_acc": {
+        "White": 0.7532,
+        "Black": 0.8112,
+        "Asian": 0.8236,
+        "Indian": 0.6478,
+        "Others": 0.5813
+      },
+      "age_acc": 0.5266
+    },
+    {
+      "epoch": 22,
+      "lr": 3.6e-05,
+      "train_loss": 1.9182,
+      "grad_norm": 6.3598,
+      "val_loss": 2.082,
+      "origin_acc": 0.7279,
+      "gender_acc": 0.8888,
+      "per_origin_acc": {
+        "White": 0.7578,
+        "Black": 0.8198,
+        "Asian": 0.8479,
+        "Indian": 0.5697,
+        "Others": 0.5942
+      },
+      "age_acc": 0.5344
+    },
+    {
+      "epoch": 23,
+      "lr": 1.7e-05,
+      "train_loss": 1.908,
+      "grad_norm": 6.1919,
+      "val_loss": 2.0806,
+      "origin_acc": 0.7305,
+      "gender_acc": 0.8884,
+      "per_origin_acc": {
+        "White": 0.7719,
+        "Black": 0.7872,
+        "Asian": 0.8397,
+        "Indian": 0.6294,
+        "Others": 0.5807
+      },
+      "age_acc": 0.5367
+    },
+    {
+      "epoch": 24,
+      "lr": 5e-06,
+      "train_loss": 1.8984,
+      "grad_norm": 6.058,
+      "val_loss": 2.0741,
+      "origin_acc": 0.7299,
+      "gender_acc": 0.8885,
+      "per_origin_acc": {
+        "White": 0.7704,
+        "Black": 0.8124,
+        "Asian": 0.8408,
+        "Indian": 0.6101,
+        "Others": 0.5729
+      },
+      "age_acc": 0.5355
+    },
+    {
+      "epoch": 25,
+      "lr": 1e-06,
+      "train_loss": 1.8945,
+      "grad_norm": 6.0131,
+      "val_loss": 2.0736,
+      "origin_acc": 0.7315,
+      "gender_acc": 0.8889,
+      "per_origin_acc": {
+        "White": 0.7544,
+        "Black": 0.8129,
+        "Asian": 0.8425,
+        "Indian": 0.632,
+        "Others": 0.5835
+      },
+      "age_acc": 0.5353
+    }
+  ]
+}

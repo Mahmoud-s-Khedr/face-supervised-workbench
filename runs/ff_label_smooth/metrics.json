@@ -1,0 +1,168 @@
+{
+  "run_name": "ff_label_smooth",
+  "device": "cuda",
+  "params": 393522,
+  "elapsed_sec": 112.4,
+  "config": {
+    "run_name": "ff_label_smooth",
+    "dataset": "fairface",
+    "data_dir": "",
+    "fairface_config": "0.25",
+    "age_mode": null,
+    "img_size": 96,
+    "augment": "none",
+    "max_samples": 12000,
+    "model": "cnn",
+    "activation": "relu",
+    "norm": "batchnorm",
+    "init": "default",
+    "dropout": 0.2,
+    "no_pretrained": false,
+    "cls_loss": "label_smoothing",
+    "reg_loss": "huber",
+    "optimizer": "adamw",
+    "scheduler": "cosine",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "epochs": 6,
+    "seed": 42,
+    "num_workers": 2,
+    "no_save_checkpoint": false
+  },
+  "final": {
+    "epoch": 6,
+    "lr": 1e-06,
+    "train_loss": 3.9262,
+    "grad_norm": 3.4689,
+    "val_loss": 3.9272,
+    "origin_acc": 0.4233,
+    "gender_acc": 0.7327,
+    "per_origin_acc": {
+      "East Asian": 0.4571,
+      "Indian": 0.4645,
+      "Black": 0.7246,
+      "White": 0.6557,
+      "Middle Eastern": 0.0826,
+      "Latino_Hispanic": 0.2058,
+      "Southeast Asian": 0.2383
+    },
+    "age_acc": 0.3637
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.000933,
+      "train_loss": 4.5334,
+      "grad_norm": 1.7994,
+      "val_loss": 4.4511,
+      "origin_acc": 0.252,
+      "gender_acc": 0.6323,
+      "per_origin_acc": {
+        "East Asian": 0.3109,
+        "Indian": 0.5034,
+        "Black": 0.1643,
+        "White": 0.3462,
+        "Middle Eastern": 0.0118,
+        "Latino_Hispanic": 0.2461,
+        "Southeast Asian": 0.0803
+      },
+      "age_acc": 0.3073
+    },
+    {
+      "epoch": 2,
+      "lr": 0.00075,
+      "train_loss": 4.3877,
+      "grad_norm": 1.8588,
+      "val_loss": 4.3543,
+      "origin_acc": 0.3133,
+      "gender_acc": 0.5853,
+      "per_origin_acc": {
+        "East Asian": 0.3666,
+        "Indian": 0.2883,
+        "Black": 0.5483,
+        "White": 0.707,
+        "Middle Eastern": 0.0,
+        "Latino_Hispanic": 0.0291,
+        "Southeast Asian": 0.0777
+      },
+      "age_acc": 0.3277
+    },
+    {
+      "epoch": 3,
+      "lr": 0.000501,
+      "train_loss": 4.2436,
+      "grad_norm": 2.3819,
+      "val_loss": 4.2538,
+      "origin_acc": 0.3123,
+      "gender_acc": 0.691,
+      "per_origin_acc": {
+        "East Asian": 0.5708,
+        "Indian": 0.3524,
+        "Black": 0.1425,
+        "White": 0.7527,
+        "Middle Eastern": 0.0088,
+        "Latino_Hispanic": 0.0358,
+        "Southeast Asian": 0.1244
+      },
+      "age_acc": 0.3127
+    },
+    {
+      "epoch": 4,
+      "lr": 0.000251,
+      "train_loss": 4.1175,
+      "grad_norm": 3.0157,
+      "val_loss": 4.1581,
+      "origin_acc": 0.3427,
+      "gender_acc": 0.7043,
+      "per_origin_acc": {
+        "East Asian": 0.7216,
+        "Indian": 0.0641,
+        "Black": 0.5725,
+        "White": 0.5641,
+        "Middle Eastern": 0.1239,
+        "Latino_Hispanic": 0.1969,
+        "Southeast Asian": 0.0363
+      },
+      "age_acc": 0.3397
+    },
+    {
+      "epoch": 5,
+      "lr": 6.8e-05,
+      "train_loss": 4.0041,
+      "grad_norm": 3.3422,
+      "val_loss": 3.9839,
+      "origin_acc": 0.3977,
+      "gender_acc": 0.744,
+      "per_origin_acc": {
+        "East Asian": 0.6009,
+        "Indian": 0.4142,
+        "Black": 0.6184,
+        "White": 0.5073,
+        "Middle Eastern": 0.0914,
+        "Latino_Hispanic": 0.1186,
+        "Southeast Asian": 0.3523
+      },
+      "age_acc": 0.371
+    },
+    {
+      "epoch": 6,
+      "lr": 1e-06,
+      "train_loss": 3.9262,
+      "grad_norm": 3.4689,
+      "val_loss": 3.9272,
+      "origin_acc": 0.4233,
+      "gender_acc": 0.7327,
+      "per_origin_acc": {
+        "East Asian": 0.4571,
+        "Indian": 0.4645,
+        "Black": 0.7246,
+        "White": 0.6557,
+        "Middle Eastern": 0.0826,
+        "Latino_Hispanic": 0.2058,
+        "Southeast Asian": 0.2383
+      },
+      "age_acc": 0.3637
+    }
+  ]
+}
