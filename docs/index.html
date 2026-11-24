@@ -264,6 +264,11 @@
             <span id="cropFracVal">68%</span>
           </div>
           <div class="slider-row">
+            <span>Manual Horizontal Offset</span>
+            <input id="cropX" type="range" min="0.20" max="0.80" step="0.02" value="0.50" />
+            <span id="cropXVal">50%</span>
+          </div>
+          <div class="slider-row">
             <span>Manual Vertical Offset</span>
             <input id="cropY" type="range" min="0.20" max="0.80" step="0.02" value="0.45" />
             <span id="cropYVal">45%</span>
@@ -348,6 +353,7 @@
     const cropCtx = cropCanvas.getContext("2d", { willReadFrequently: true });
     const autoDetectToggle = document.getElementById("autoDetectToggle");
     const cropFracInput = document.getElementById("cropFrac");
+    const cropXInput = document.getElementById("cropX");
     const cropYInput = document.getElementById("cropY");
     const ttaToggle = document.getElementById("ttaToggle");
     const modelStatus = document.getElementById("modelStatus");
@@ -372,11 +378,12 @@
       return pairs[0];
     }
 
-    function computeCropBox(w, h, fracOverride = null, yOverride = null) {
-      const frac = Math.min(1.0, Math.max(0.25, fracOverride ?? parseFloat(cropFracInput.value)));
+    function computeCropBox(w, h, fracOverride = null, yOverride = null, xOverride = null) {
+      const frac = Math.min(1.0, Math.max(0.20, fracOverride ?? parseFloat(cropFracInput.value)));
+      const xCenter = Math.min(0.85, Math.max(0.15, xOverride ?? parseFloat(cropXInput.value)));
       const yCenter = Math.min(0.85, Math.max(0.15, yOverride ?? parseFloat(cropYInput.value)));
       const side = Math.round(Math.min(w, h) * frac);
-      const cx = w / 2;
+      const cx = w * xCenter;
       const cy = h * yCenter;
       const sx = Math.max(0, Math.min(w - side, Math.round(cx - side / 2)));
       const sy = Math.max(0, Math.min(h - side, Math.round(cy - side / 2)));
@@ -618,10 +625,12 @@
 
     function onSliderChange() {
       document.getElementById("cropFracVal").textContent = `${Math.round(cropFracInput.value * 100)}%`;
+      document.getElementById("cropXVal").textContent = `${Math.round(cropXInput.value * 100)}%`;
       document.getElementById("cropYVal").textContent = `${Math.round(cropYInput.value * 100)}%`;
       if (currentImg) runInference(currentImg, currentImg.naturalWidth, currentImg.naturalHeight);
     }
     cropFracInput.addEventListener("input", onSliderChange);
+    cropXInput.addEventListener("input", onSliderChange);
     cropYInput.addEventListener("input", onSliderChange);
     autoDetectToggle.addEventListener("change", () => {
       smoothBox = null;
